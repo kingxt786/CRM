@@ -1,0 +1,6 @@
+body{ font-family: Inter, Arial, sans-serif; margin:0; padding:12px }
+.center{ display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:60px }
+.app-grid{ display:flex; gap:16px }
+.left{ flex:1 }
+.right{ width:360px }
+.card{ border:1px solid #eee; padding:8px; border-radius:8px }

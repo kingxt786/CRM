@@ -1,0 +1,39 @@
+{
+  "name": "totbtot-crm-electron",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "vite": "vite",
+    "build:web": "vite build",
+    "build:electron": "electron-builder",
+    "start": "electron .",
+    "package:win": "npm run build:web && electron-builder --windows nsis"
+  },
+  "build": {
+    "appId": "com.totbtot.crm",
+    "productName": "TotBtot CRM",
+    "files": ["dist/**","electron/**","package.json","src/**","index.html"],
+    "extraResources": [],
+    "win": {
+      "target": ["nsis"],
+      "artifactName": "TotBtot-CRM-Setup-${version}.exe"
+    }
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "dayjs": "^1.11.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.0",
+    "wait-on": "^7.0.0",
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "react-to-print": "^2.14.13"
+  }
+}
